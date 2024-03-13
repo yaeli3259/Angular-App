@@ -1,0 +1,71 @@
+<div *ngIf="showCourseDetails" class="overlay" (click)="toggleCourseDetails()"></div> <!-- Full-page overlay -->
+<div *ngIf="course" class="course-details">
+  <!-- <div class="course-image" [style.backgroundImage]="'url(assets/cat4.jpg)'"> -->
+    <div class="course-image" [style.backgroundImage]="'url(assets/' + course.image + ')'">
+     <div class="course-name" [class.focused]="focusCourse" (focus)="handleFocus()" (click)="toggleCourseDetails()">{{ course?.name }}</div>
+  </div>
+
+</div>
+
+<div *ngIf="showCourseDetails && course" class="course-details-window">
+  <div *ngIf="!editCourse" class="course-details-content">
+  <div class="course-details-content">
+    <h2 class="title">{{ course.name }}</h2>
+
+    <div class="detail">
+      <span class="icon-wrapper">
+        <img src="assets/code.png" alt="Icon" class="icon">
+      </span>
+      <span class="detail-text">Code: {{ course.code }}</span>
+    </div>
+
+    <div class="detail">
+      <span class="icon-wrapper">
+        <img src="assets/teacher.png" alt="Icon" class="icon">
+      </span>
+      <span class="detail-text">{{ course.lessonCount }} Lessons</span>
+    </div>
+
+    <div class="detail" [ngClass]="{'highlighted': isDateInNextWeek(course.startDate), 'pink-highlight': isDateInNextWeek(course.startDate)}">
+      <span class="icon-wrapper">
+        <img src="assets/calendar.png" alt="Icon" class="icon">
+      </span>
+      <span [ngStyle]="{'color': isDateInNextWeek(course.startDate) ? '#ffffff' : '#000000'}">Start Date: </span>
+      <span [ngStyle]="{'color': isDateInNextWeek(course.startDate) ? '#ffffff' : '#000000'}">{{ course.startDate }}</span>
+    </div>
+
+    <div class="syllabus-info">
+      <span class="icon-wrapper">
+        <img src="assets/syllabus.png" alt="Syllabus Icon" class="icon">
+      </span>
+      <span class="detail-title">Syllabus:</span>
+      <div *ngFor="let item of course.syllabus" class="syllabus-item">
+        <span class="icon-wrapper">
+          <img src="assets/arrow.png" alt="Item Icon" class="icon">
+        </span>
+        <span class="detail-text">{{ item }}</span>
+      </div>
+    </div>
+    <div class="detail"></div>
+
+    <div *ngIf="course.category" class="category-info" class="detail" >
+      <span class="icon-wrapper" >
+        <img src="{{'assets/'+course.category.iconRoute }}" alt="{{ course.category.name }} Icon" class="icon">
+      </span>
+      <span class="detail-text">{{ course.category.name }} category</span>
+    </div>
+ <div>
+    <img *ngIf="isFrontalMode(course.learningMode)" src="assets/adaptation.png"   class="icon" alt="Frontal">
+    <img *ngIf="isZoomMode(course.learningMode)" src="assets/zoom.png"   class="icon" alt="Zoom">
+  </div>
+  </div>
+  <div class="button-container">
+    <img src="assets/cancel.png" alt="Cancel" class="button-image icon" (click)="toggleCourseDetails()">
+    <img src="assets/Edit.png" alt="Edit" class="button-image icon" (click)="showEditComponent()">
+  </div>
+  </div>
+  <app-edit-course *ngIf="editCourse" [course]="course" (finishEditing)="cancelEditingHandler()"></app-edit-course>
+
+
+</div>
+

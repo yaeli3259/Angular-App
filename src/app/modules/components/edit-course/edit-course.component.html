@@ -1,0 +1,71 @@
+
+
+<div *ngIf="course" >
+  <h2>Edit Course</h2>
+  <div class="input-container">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="course.name" name="name" class="input-field" required>
+      <div *ngIf="!course.name" class="text-danger">Name is required.</div>
+    </div>
+  <button type="button" (click)="toggleEditCategory()">Edit Category</button>
+
+  <div *ngIf="showEditCategory">
+    <div>
+      <label for="categoryCode">Category Code:</label>
+      <input type="text" id="categoryCode" [(ngModel)]="course.category.code" name="categoryCode" class="input-field">
+    </div>
+    <div>
+      <label for="categoryName">Category Name:</label>
+      <input type="text" id="categoryName" [(ngModel)]="course.category.name" name="categoryName" class="input-field">
+    </div>
+    <div>
+      <label for="categoryIconRoute">Category Icon Route:</label>
+      <input type="text" id="categoryIconRoute" [(ngModel)]="course.category.iconRoute" name="categoryIconRoute" class="input-field">
+    </div>
+  </div>
+  <div>
+    <label for="lessonCount">Lesson Count:</label>
+    <input type="number" id="lessonCount" [(ngModel)]="course.lessonCount" name="lessonCount" class="input-field">
+  </div>
+  <div>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" [(ngModel)]="course.startDate" name="startDate" class="input-field">
+  </div>
+</div>
+
+<div>
+ 
+  <div >
+    <button type="button"  (click)="toggleEditSyllabus()">Edit Syllabus</button>
+  <div *ngIf="showEditSyllabus">
+    <label for="syllabus">Syllabus:</label>
+    <textarea id="syllabus" [(ngModel)]="syllabusText" name="syllabus" class="input-field" (keydown.enter)="addSyllabusItem($event)" (blur)="addSyllabusItem($event)">{{ syllabusText }}</textarea>
+  </div>
+  <div>
+  <div>
+    <label for="learningMode">Learning Mode:</label>
+    <input type="text" id="learningMode" [(ngModel)]="course.learningMode" name="learningMode" class="input-field">
+  </div>
+  <div>
+    <label for="instructorCode">Instructor Code:</label>
+    <input type="text" id="instructorCode" [(ngModel)]="course.instructorCode" name="instructorCode" class="input-field">
+  </div>
+  <div>
+    <label for="image">Image:</label>
+    <input type="text" id="image" [(ngModel)]="editedImage" name="image" class="input-field" required>
+    <div *ngIf="!editedImage" class="text-danger">Image is required.</div>
+  </div>
+</div>
+  </div>
+
+   Add more input fields for other course details
+
+  <div class="buttons">
+    <button (click)="cancel()" class="cancel-button">Cancel</button>
+    <button (click)="saveChanges()" class="save-button">Save Changes</button>
+  </div>
+</div>
+   
+
+

@@ -1,0 +1,73 @@
+
+<div class="container">
+  <img src="assets/course.png" alt ="course" style="width: 60px; height: auto;" />
+  <h2 class="text-center">Add New Course</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="input-container">
+        <div class="form-group">
+          <label for="name" class="font-weight-bold">Name:</label>
+          <input type="text" id="name" [(ngModel)]="course.name" name="name" class="form-control border-0 border-bottom">
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="form-group mb-0">
+              <label for="category" class="font-weight-bold">Category:</label>
+              <div class="d-flex">
+                <select id="category" [(ngModel)]="selectedCategory" name="category" class="form-select custom-select me-2" style="width: 200px;">
+                  <option value="" disabled selected>Select a category</option>
+                  <option *ngFor="let category of categories" [value]="category">{{ category.name }}</option>
+                </select>
+                <img src="assets/good.png" alt="Save" style="width: 40px; height: auto; cursor: pointer;" (click)="saveCategory()">
+              </div>
+            </div>
+          </div>
+        </div>      
+        
+        <div class="form-group">
+          <label for="lessonCount" class="font-weight-bold">Lesson Count:</label>
+          <input type="number" id="lessonCount" [(ngModel)]="course.lessonCount" name="lessonCount" class="form-control border-0 border-bottom" [min]="1">
+          <div *ngIf="course.lessonCount !=0&&course.lessonCount < 1 && course.lessonCount !== null" class="text-danger">Lesson count must be greater than or equal to 1.</div>
+        </div>
+        <div class="form-group">
+          <label for="startDate" class="font-weight-bold">Start Date:</label>
+          <input type="date" id="startDate" [(ngModel)]="course.startDate" name="startDate" class="form-control border-0 border-bottom">
+          <!-- Add date validation message here if needed -->
+        </div>
+        <div class="form-group">
+          <h4 class="font-weight-bold">Syllabus:</h4>
+          <div class="input-group">
+            <input type="text" [(ngModel)]="inputString" (keyup.enter)="addString()" class="form-control border-0 border-bottom">
+            <div class="input-group-append">
+              <img src="assets/addSyllabus.png" alt="add" style="width: 30px; height: auto;margin-left: 3px;" (click)="addString()">
+            </div>
+          </div>
+          <ul>
+            <li *ngFor="let str of stringList">{{ str }}</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <label for="instructorCode" class="font-weight-bold">Instructor Code:</label>
+          <input type="text" id="instructorCode" [(ngModel)]="course.instructorCode" name="instructorCode" class="form-control border-0 border-bottom">
+        </div>
+        <div class="form-group">
+          <label for="image" class="font-weight-bold">Image:</label>
+          <input type="text" id="image" [(ngModel)]="course.image" name="image" class="form-control border-0 border-bottom">
+        </div>
+        <div class="form-group">
+          <label for="learningMode" class="font-weight-bold">Learning Mode:</label>
+          <select id="learningMode" [(ngModel)]="selectedLearningMode" name="learningMode" class="form-control border-0 border-bottom">
+            <option value="Frontal">Frontal</option>
+            <option value="Zoom">Zoom</option>
+          </select>
+        </div>
+      </div>
+      <div class="text-center" style="display: flex; justify-content: space-between;">
+        <img (click)="cancel()" src="assets/previous.png" alt="previous" style="width: 50px; height: auto;" />
+        <img (click)="saveCourse()" src="assets/next.png" alt="previous" style="width: 50px; height: auto;"/>
+      </div>
+      <div *ngIf="successMessage" class="text-center mt-3">{{ successMessage }}</div>
+    </div>
+  </div>
+</div>
+

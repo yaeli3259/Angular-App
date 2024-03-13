@@ -1,0 +1,24 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control">
+  </div>
+  <button (click)="login()" class="btn btn-success">Login</button>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+   
+
+
+  <div class="form-group" style="margin-top: 20px;">
+    <button class="btn btn-success" (click)="toggleCourseInput()">Entrance of lecturers</button>
+  </div>
+  <div class="form-group" *ngIf="showCourseInput">
+    <label for="courseName">Course Name:</label>
+    <input type="text" class="form-control" id="courseName" name="courseName" [(ngModel)]="lecturer">
+   </div>
+
+</div> 

@@ -1,0 +1,34 @@
+
+<div class="container">
+  <h1 class="text-center mb-4">Courses</h1>
+
+  <div class="search-container mb-4">
+    <div class="row">
+      <!-- Search by name -->
+      <div class="col-md-6 mb-2">
+        <mat-form-field appearance="fill" class="search-field">
+          <mat-label>Search by name</mat-label>
+          <input matInput type="text" placeholder="Search..." [(ngModel)]="searchText" (input)="handleSearch($event)">
+        </mat-form-field>
+      </div>
+  
+      <!-- Search by learning mode -->
+      <div class="col-md-6 mb-2">
+        <mat-form-field appearance="fill" class="search-field">
+          <mat-label>Search by learning mode</mat-label>
+          <input matInput type="text" placeholder="Search..." [(ngModel)]="searchText2" (input)="handleSearch2($event)">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+<div class="sticky-top">
+  <a [routerLink]="'/addCourse'" class="add-course-link">
+    <img src="assets/plus.png" alt="add" style="width: 50px; height: auto;" (click)="showEditComponent()">
+  </a>
+</div>
+<div class="course-container">
+  <div *ngFor="let course of courses" class="course-item">
+    <app-course-details [course]="course"></app-course-details>
+  </div>
+
+</div>

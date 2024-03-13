@@ -1,0 +1,90 @@
+  
+ .content-container {
+  padding-top: 70px; 
+}
+ .edit-course h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .edit-course label {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+
+
+  .cancel-button,
+  .save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: #00bfff;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .cancel-button:hover,
+  .save-button:hover {
+    background-color: #00bfff;
+  }
+  .edit-course {
+    text-align: center; // Center align the contents
+    
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    
+    .input-container {
+        color:#0056b3;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // Two columns with equal width
+      gap: 20px; // Gap between columns
+      margin-bottom: 20px; // Add some space between input groups
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    .buttons {
+      margin-top: 20px;
+    }
+    
+    .cancel-button,
+    .save-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+      background-color: #007bff;
+      color: #fff;
+      margin-right: 10px;
+    }
+    
+    .cancel-button:hover,
+    .save-button:hover {
+      background-color: #0056b3;
+    }
+  }
+  

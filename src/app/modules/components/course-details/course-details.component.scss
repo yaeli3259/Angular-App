@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+}
+
+.course-details {
+  position: relative;
+  width: 100%;
+  height: auto; 
+}
+.course-details {
+  width: 30%; 
+  float: left;
+}
+
+.course-name:focus {
+  text-decoration: underline;
+}
+.course-image {
+  position: relative;
+  width: 250px;
+  height: 250px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.course-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.detail.highlighted {
+  font-weight: bold;
+  color: green;
+}
+.category-info {
+  display: flex;
+  align-items: center;
+}
+
+.course-details-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: auto; 
+  max-width: 820px; 
+  padding: 40px; 
+  border: 2px solid rgba(0, 0, 0, 0.5); 
+  border-radius: 10px; 
+  background-color: #fff;
+}
+
+.title {
+  font-size: 24px; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+}
+
+.detail {
+  font-size: 20px; 
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; 
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 10px;
+
+}
+.icon-wrapper {
+  display: inline-block; 
+}
+
+.icon {
+  width: 30px;
+  height:30px;
+  margin-right: 5px;
+}
+
+.detail-text {
+  font-size: 18px;
+}
+
+.detail-title {
+  font-size: 20px; 
+  font-weight: bold;
+}
+
+.syllabus-item {
+  margin-left: 40px;
+}
+
+.category-info {
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+}
+.button {
+  background-color: #00bfff;
+  border: 5px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: lightblue;
+  color:  #00bfff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Adjust the space between buttons as needed */
+}

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/LOGO.png" alt="Your Logo" width="150" height="40" class="d-inline-block align-top" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/logout">Logout Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register">Register Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/allCourses">AllCourses Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addCourse">Add course</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mt-5 pt-5"> <!-- Added mt-5 and pt-5 classes for top margin and padding -->
+  <!-- Your content here -->
+</div>
+<router-outlet></router-outlet>

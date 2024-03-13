@@ -1,0 +1,31 @@
+.course-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust z-index as needed */
+}
+
+
+.course-item {
+  flex: 1; /* Allow items to expand to fill available space */
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex; /* Add this line */
+  justify-content: center; /* Add this line */
+}
+
+@media (min-width: 768px) {
+  .course-item {
+    flex-basis: calc(50% - 20px); /* Two items per row, considering padding */
+  }
+}
+
+@media (min-width: 992px) {
+  .course-item {
+    flex-basis: calc(33.33% - 20px); /* Three items per row, considering padding */
+  }
+}
